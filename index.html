@@ -7,25 +7,18 @@
 <body>
 
     <script>
-        let nome = 'Pietro Lima';
-        let idade = 32;
-        let peso = 73.3;
-        let humano = true;
 
-        let alunos = ['Pietro', 'Allam'];
-        let aluno = {
-            nome: 'Manjubinha',
-            idade: 59,
-            peso: 65,
-            humano: true
-        };
+        function soma(valor1, valor2) {
+            let resultado = valor1 + valor2;
+            return resultado
+        }
+        let result = soma(24, 25);
 
         console.log(`
         index.html Script
-        \n${nome} - ${idade} - ${peso} - humano: ${humano}
-        \n${alunos}
-        \n${aluno.nome} - ${aluno.idade}
+        \nSoma = ${result}
         `);
     </script>
 </body>
+
 </html>
