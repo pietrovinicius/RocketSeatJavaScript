@@ -8,14 +8,8 @@ let buttonElement = document.querySelector('#app button');
 
 let buttonFormatList = document.querySelector('#format');
 
-console.log(buttonFormatList);
-
-//list de todos
-let todos = [
-    'Fazer café',
-    'Estudar JavaScript',
-    'Pesquisar na comunidade',
-];
+//list de todos com os dados do local Storage
+let todos = JSON.parse(localStorage.getItem('list_todos')) || [];
 
 //mostrar os todos na tela 
 function renderTodos() {
@@ -52,16 +46,22 @@ renderTodos();
 function addTodo() {
 
     let todoText = inputElement.value;
-
-    todos.push(todoText);
-    inputElement.value = "";
-    renderTodos();
+    if(todoText.length < 1){
+        console.log(`InputTexto vazio`);
+        alert(`TODO não pode ser vazio!`);
+    }else{
+        todos.push(todoText);
+        inputElement.value = "";
+        renderTodos();
+        saveToStorage();
+    }
 }
 
 //remover todo
 function deletetodo(posicao) {
     todos.splice(posicao, 1);
     renderTodos();
+    saveToStorage();
 }
 
 //format list
@@ -74,7 +74,14 @@ function formatList(){
     //apagando o input e renderizando a list
     inputElement.value = "";
     renderTodos();
+    saveToStorage();
 }
+
+//localStorage
+function saveToStorage(){
+    localStorage.setItem('list_todos', JSON.stringify(todos));
+}
+
 
 //ação do botão clicado
 buttonElement.onclick = addTodo;
