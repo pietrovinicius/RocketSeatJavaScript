@@ -9,27 +9,18 @@
 <body>
 
     <div id="app">
-        <input type="text" class="nome" />
-        <button class="botao">Adicionar</button>
-    </div>
-
-    <div id="linkRef">
-        <text> </text>
+        <div class="box"></div>
     </div>
 
     <script>
         console.log(`index.html Script`);
 
-        let linkElement = document.createElement('a');
+        let boxElement = document.querySelector('.box');
+        console.log(boxElement);
 
-        linkElement.setAttribute('href', 'http://www.google.com.br');
-        linkElement.setAttribute('title', 'google.com.br');
-        let textElement = document.createTextNode('Acessar o google');
-
-        linkElement.appendChild(textElement);
-
-        let divContainer = document.querySelector('#linkRef');
-        divContainer.appendChild(linkElement);
+        boxElement.style.width = 100;
+        boxElement.style.height = 150;
+        boxElement.style.backgroundColor = '#f00';
 
     </script>
 </body>
