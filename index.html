@@ -8,39 +8,14 @@
 
     <script>
 
-        function retornaSexo(sexo) {
-            /*
-            if (sexo === 'M'){
-                return 'Masculino';
-            }else if(sexo === 'F'){
-                return 'Feminino';
-            }else{
-                return 'Outro';
-            }*/
+        let sexo = 'M'
 
-            switch (sexo) {
-                case 'M':
-                    return 'Masculino';
-                case 'F':
-                    return 'Feminino';
-                default:
-                    return 'Outro';
-            }
-        }
-        let result = retornaSexo('M');
+        let retorno = (sexo === 'M') ? 'Masculino' : 'Feminino';
+
         console.log(`
         index.html Script
-        \Resultado = ${result}
-        `);
-        result = retornaSexo('F');
-        console.log(`
-        index.html Script
-        \Resultado = ${result}
-        `);
-        result = retornaSexo('X');
-        console.log(`
-        index.html Script
-        \Resultado = ${result}
+        \nsexo = ${sexo}
+        \nResultado = ${retorno}
         `);
     </script>
 </body>
