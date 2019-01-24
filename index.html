@@ -13,22 +13,23 @@
         <button class="botao">Adicionar</button>
     </div>
 
+    <div id="linkRef">
+        <text> </text>
+    </div>
+
     <script>
         console.log(`index.html Script`);
 
-        //querySelector
-        let inputElement = document.querySelector('input.nome');
-        console.log(inputElement);        
+        let linkElement = document.createElement('a');
 
-        //botao
-        let btnElement = document.querySelector('button.botao');
-        console.log(btnElement);
-        btnElement.onclick = function () {
-            let textoDigitado = inputElement.value;
-            console.log(`${textoDigitado}`);
-            console.log('Botão adicionar na função.');
-            alert(`${textoDigitado}\n\nBotão adicionar foi clicado`);
-        }
+        linkElement.setAttribute('href', 'http://www.google.com.br');
+        linkElement.setAttribute('title', 'google.com.br');
+        let textElement = document.createTextNode('Acessar o google');
+
+        linkElement.appendChild(textElement);
+
+        let divContainer = document.querySelector('#linkRef');
+        divContainer.appendChild(linkElement);
 
     </script>
 </body>
