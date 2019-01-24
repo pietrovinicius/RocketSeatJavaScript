@@ -8,15 +8,39 @@
 
     <script>
 
-        function soma(valor1, valor2) {
-            let resultado = valor1 + valor2;
-            return resultado
-        }
-        let result = soma(24, 25);
+        function retornaSexo(sexo) {
+            /*
+            if (sexo === 'M'){
+                return 'Masculino';
+            }else if(sexo === 'F'){
+                return 'Feminino';
+            }else{
+                return 'Outro';
+            }*/
 
+            switch (sexo) {
+                case 'M':
+                    return 'Masculino';
+                case 'F':
+                    return 'Feminino';
+                default:
+                    return 'Outro';
+            }
+        }
+        let result = retornaSexo('M');
         console.log(`
         index.html Script
-        \nSoma = ${result}
+        \Resultado = ${result}
+        `);
+        result = retornaSexo('F');
+        console.log(`
+        index.html Script
+        \Resultado = ${result}
+        `);
+        result = retornaSexo('X');
+        console.log(`
+        index.html Script
+        \Resultado = ${result}
         `);
     </script>
 </body>
