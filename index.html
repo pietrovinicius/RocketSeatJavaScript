@@ -2,20 +2,35 @@
 
 <head>
     <title>RocketSeat JavaScript</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8" />
 </head>
 
 <body>
 
     <div id="app">
-        <button onclick="mostraAlerta()">Me pressione</button>
+        <input type="text" class="nome" />
+        <button class="botao">Adicionar</button>
     </div>
 
     <script>
-
-        function mostraAlerta(){
-            alert('Alerta!!!!!');
-        }
         console.log(`index.html Script`);
+
+        //querySelector
+        let inputElement = document.querySelector('input.nome');
+        console.log(inputElement);        
+
+        //botao
+        let btnElement = document.querySelector('button.botao');
+        console.log(btnElement);
+        btnElement.onclick = function () {
+            let textoDigitado = inputElement.value;
+            console.log(`${textoDigitado}`);
+            console.log('Botão adicionar na função.');
+            alert(`${textoDigitado}\n\nBotão adicionar foi clicado`);
+        }
+
     </script>
 </body>
+
 </html>
