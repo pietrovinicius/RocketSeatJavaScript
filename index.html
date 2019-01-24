@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>RocketSeat JavaScript</title>
+    <title>RocketSeat - JavaScript</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta charset="utf-8" />
 </head>
@@ -9,20 +9,27 @@
 <body>
 
     <div id="app">
-        <div class="box"></div>
+
+        <ul>
+            <li>
+                Fazer café
+                <a href="#">Excluir</a>
+            </li>
+            <li>
+                Estudar JavaScript
+                <a href="#">Excluir</a>
+            </li>
+            <li>
+                Pesquisar na comunidade
+                <a href="#">Excluir</a>
+            </li>
+        </ul>
+        <input type="text" placeholder="Digite um todo" />
+        <button>Adicionar</button>
+
     </div>
-
-    <script>
-        console.log(`index.html Script`);
-
-        let boxElement = document.querySelector('.box');
-        console.log(boxElement);
-
-        boxElement.style.width = 100;
-        boxElement.style.height = 150;
-        boxElement.style.backgroundColor = '#f00';
-
-    </script>
+    <script>console.log(`Loading index.html`);</script>
+    <script src="Todos.js"></script>
 </body>
 
 </html>
