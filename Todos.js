@@ -6,6 +6,10 @@ let listElement = document.querySelector('#app ul');
 let inputElement = document.querySelector('#app input');
 let buttonElement = document.querySelector('#app button');
 
+let buttonFormatList = document.querySelector('#format');
+
+console.log(buttonFormatList);
+
 //list de todos
 let todos = [
     'Fazer café',
@@ -60,6 +64,19 @@ function deletetodo(posicao) {
     renderTodos();
 }
 
+//format list
+function formatList(){    
+    let tamanho = todos.length;
+    for(i=0; i<tamanho; i++){
+        todos.splice(i, tamanho);
+        console.log(`Apagando - ${i}`);
+    }
+    //apagando o input e renderizando a list
+    inputElement.value = "";
+    renderTodos();
+}
+
 //ação do botão clicado
 buttonElement.onclick = addTodo;
+buttonFormatList.onclick = formatList;
 
