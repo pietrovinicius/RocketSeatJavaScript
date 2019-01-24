@@ -8,15 +8,17 @@
 
     <script>
 
-        let sexo = 'M'
+        function exibeAlgo() {
+            console.log('Hello world!');
+        }
 
-        let retorno = (sexo === 'M') ? 'Masculino' : 'Feminino';
+        //executa a cada 1s
+        setInterval(exibeAlgo, 1000);
+        
+        //espera 3s para executar
+        setTimeout(exibeAlgo, 3000);
 
-        console.log(`
-        index.html Script
-        \nsexo = ${sexo}
-        \nResultado = ${retorno}
-        `);
+        console.log(`index.html Script`);
     </script>
 </body>
 
