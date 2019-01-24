@@ -21,21 +21,42 @@ function renderTodos() {
     //gerando a list
     for (todo of todos) {
         let todoElement = document.createElement('li');
-        let todoText = document.createTextNode(todo);
+        let todoText = document.createTextNode(todo + " - ");
 
+        let linkElement = document.createElement('a');
+        //obrigatoriamente o componente a precisa de um href
+        linkElement.setAttribute('href', '#');
+
+        //posicao do todo na list
+        let posicao = todos.indexOf(todo);
+        linkElement.setAttribute('onclick', 'deletetodo(' + posicao + ')');
+
+        let linkText = document.createTextNode('X');
+        linkElement.appendChild(linkText);
+
+        //add na minha li o texto e o link
         todoElement.appendChild(todoText);
+        todoElement.appendChild(linkElement);
+
         listElement.appendChild(todoElement);
     }
 }
 //inicializamdo a list
 renderTodos();
 
+//adicionar o todo
 function addTodo() {
 
     let todoText = inputElement.value;
 
     todos.push(todoText);
     inputElement.value = "";
+    renderTodos();
+}
+
+//remover todo
+function deletetodo(posicao) {
+    todos.splice(posicao, 1);
     renderTodos();
 }
 
